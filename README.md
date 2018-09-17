@@ -85,11 +85,11 @@ to list modules run `ls *.reg.m4`
 
 ### config.m4
 
-#### SWCLASSES 
+##### SWCLASSES 
 select either `HKEY_CURRENT_USER\Software\Classes` or `HKEY_LOCAL_MACHINE\Software\Classes` according to whether you are
 doing configuration to self or all users. If unsure use the `HKEY_CURRENT_USER\Software\Classes`.
 
-#### ICON_DIR
+##### ICON_DIR
 Icon directory where the icons will be installed. This path is also used in .reg.m4 file to locate icons. If unsure let
 the default one `CYGWIN_PATH`\\usr\\local\\share\\icons`.
 
@@ -104,11 +104,11 @@ TODO: check/add support editors as default:
 
 ## Cygwin configuration
 
-#### CYGWIN_PATH
+##### CYGWIN_PATH
 A path to your cygwin installation
-#### CYGWIN_PROGID
+##### CYGWIN_PROGID
 A basic key name base for cygwin programs. Select one of `cygwin32` or `cygwin64`. Can be any string without spaces.
-#### SCRIPT_EDITOR 
+##### SCRIPT_EDITOR 
 A command to open a (ruby/perl/...) script in your editor. Typicaly "C:\\Program Files\\PSPad\\pspad.exe", or something
 like this. Include %1 parameter, which represents the file requested for opening. Quoting the %1 by " seems to be a good
 idea. The `"` and `\` must be escaped by `\`.
@@ -118,10 +118,10 @@ everyone. [PSPad](https://www.pspad.com/) or
 [Notepad++](https://notepad-plus-plus.org/) can be a better choice for
 Windows users.
 
-#### EDITOR
+##### EDITOR
 An environment variable EDITOR will be setup for Emacs. Simply skip if you do not want to install Emacs registry files.
 
-#### CONTEXT_MENU 
+##### CONTEXT_MENU 
 A macro which expands to a label in context menu. It accepts one argument - represented by $1 - the name of
 program/action. Select one of the `CygWin32 $1` or `CygWin64 $1` according to your cygwin version installation.
 
@@ -129,13 +129,13 @@ program/action. Select one of the `CygWin32 $1` or `CygWin64 $1` according to yo
 The explicit Emacs configuration is necessary only if you want to use other Emacs then the Cygwin Emacs (like `NT
 Emacs`). The default configuration is for Cygwin Emacs W32 (gui) version.
 
-#### EMACS_BIN_DIR
+##### EMACS_BIN_DIR
 Directory where you emacs.exe lives
-#### EMACS_ICON
+##### EMACS_ICON
 Icon file (.exe,.dll,.ico ) for Emacs. Also use the resource ID separated by comma.
-#### EMACS_FLAVOUR 
+##### EMACS_FLAVOUR 
 Simple string indentifing Emacs ( NT, Lucid ) among other installed emacses.
-###### EMACS_VERSION
+##### EMACS_VERSION
 Optional, usefull only if several Emacs versions are installed.
 
 ### Installation

@@ -11,7 +11,7 @@ This is a generator for the [Windows registry files
 Distributed under [MIT Licence](https://choosealicense.com/licenses/mit/)
 Copyright (c) 2016,2017 Tomas Jura
 
-Icon images licences are separate. 
+Icon images licences are separate.
 
 # Installation Requirements
 ## cygwin packages
@@ -91,7 +91,7 @@ doing configuration to self or all users. If unsure use the `HKEY_CURRENT_USER\S
 
 ##### ICON_DIR
 Icon directory where the icons will be installed. This path is also used in .reg.m4 file to locate icons. If unsure let
-the default one `CYGWIN_PATH`\\usr\\local\\share\\icons`.
+the default one `CYGWIN_PATH\\usr\\local\\share\\icons`.
 
 ##### EMACS_IS_DEFAULT_FOR_TEXTFILES
 Comment this if you do not want Emacs to became the default text editor for all text files. This is important, if Emacs
@@ -140,16 +140,19 @@ Optional, usefull only if several Emacs versions are installed.
 
 ### Installation
 ## creating "run" wrappers
-In cygwin shell run `make install_runners`
+The program `run` starts a program with cmd window hidden. If copied under
+name run`program`, then it runs the program with cmd window hidden.
+
+In cygwin shell run `make install_runners` to create wrappers 
 ## Creating .reg files
-In cygwin shell run in the root project direcory
+In cygwin shell run in the root project directory
 > make all
 You should see the required .reg files. If you have modified the source files (.reg.m4), check them in text editor before installation.
 ## Applying to registry
 > make all
 Instals your selected `.reg` files defined by MODULES variable
 ### After installation
-## Preserve uninstall files
+## Preserve uninstall_* files
 Save your config file at save place. You never know when you will need the uninstall files.
 
 ## PATHEXT

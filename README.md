@@ -75,9 +75,9 @@ modifying sources ( including Makefile ).
 ## Configuration
 ### Makefile
 Edit file `Makefile` and configure the following variables:
-#### CSC 
+##### CSC 
 Modify the CSC variable to point to your csc.exe. Probably the provided path to csc.exe will be sufficient.
-#### MODULES
+##### MODULES
 Modify the MODULES variable to contain modules you want. By default all possible `.reg` files are generated and installed.
 Module roughly corresponds to one programming language (perl,ruby,sed ...) in cygwin
 Example: MODULES="ruby perl python"
@@ -93,7 +93,7 @@ doing configuration to self or all users. If unsure use the `HKEY_CURRENT_USER\S
 Icon directory where the icons will be installed. This path is also used in .reg.m4 file to locate icons. If unsure let
 the default one `CYGWIN_PATH`\\usr\\local\\share\\icons`.
 
-###### EMACS_IS_DEFAULT_FOR_TEXTFILES
+##### EMACS_IS_DEFAULT_FOR_TEXTFILES
 Comment this if you do not want Emacs to became the default text editor for all text files. This is important, if Emacs
 is not your favourite editor! 
 

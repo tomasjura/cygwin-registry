@@ -61,7 +61,7 @@ pl.ico : perl.jpg
 plw.ico : perl.jpg
 	$(call MAKEICO,plw,-white-threshold 93% -transparent white -crop 370x370+15+15)
 
-markdown.ico : markdown.svg
+markdown.ico : markdown.png
 	$(call MAKEICO,,)
 
 MAKE_SHELL_ICO=convert $< $(2) +repage \

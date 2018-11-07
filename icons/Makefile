@@ -88,7 +88,7 @@ class.ico : java.svg
 	$(call MAKEICO,,-colorspace Gray)
 #	$(call MAKEICO,class,-grayscale Rec601Luma -background lightBlue -alpha remove)
 
-tml.ico : tapestry.png
+tml.ico : tapestry.svg
 	$(call MAKEICO,tml)
 
 #TODO: make .jar .war .ear icons from package.svg

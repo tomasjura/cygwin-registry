@@ -164,6 +164,14 @@ prompt.
 # FAQ
 ## Emacs shows no windows in Windows 10
 Cygwin's emacs-w32 do not show new frames unless the emacsclient is in
-the wait mode (see switch `-n` in the emacsclient manual).  Solution
-is currently not known. Workaround is to use [Native Emacs](https://www.gnu.org/software/emacs/download.html#windows)
-instead of Cygwin Emacs.
+the wait mode (see switch `-n` in the emacsclient manual). 
+
+Workaround is to use [Native Emacs](https://www.gnu.org/software/emacs/download.html#windows) instead of Cygwin Emacs.
+or add the following code into .emacs
+
+```lisp
+(unless (equal (terminal-name (get-device-terminal nil)) "w32")
+  (make-frame-on-display "w32")
+  (delete-terminal (car (terminal-list)))
+  )
+```

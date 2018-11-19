@@ -81,16 +81,16 @@ def_key(`EMACS_EL_KEY',`SWCLASSES\EMACS_EL')
 [EMACS_EL_KEY\Shell\Open\command]
 @="EMACS_OPEN_FILE"
 
-dnl TODO add compile command, need a wrapper
+dnl TODO add a compile command to compile .el files. Do we need a wrapper script?
 undefine(EMACS_EL_KEY)dnl
 
-association(SWCLASSES\.el,@,EMACS_EL)
+association(SWCLASSES\.el,,EMACS_EL)
 "ContentType"="text/x-script.elisp"
 ; really we want PerceivedType=text ? This associates the elisp scripts with notepad, wordpad and other ugly programs
 ;"PerceivedType"="text"
 "PerceivedType"=-
 
-association(SWCLASSES\.el\OpenWithProgIds,"EMACS_PROGID")
+association(SWCLASSES\.el\OpenWithProgIds,EMACS_EL)
 
 ; `handler 5e941... allows file to be indexed as a text file'
 [SWCLASSES\.el\PersistentHandler]
@@ -107,7 +107,7 @@ def_key(EMACS_ELC_KEY,SWCLASSES\EMACS_ELC)
 [EMACS_ELC_KEY\DefaultIcon]
 @="EMACS_ELC_ICON"
 
-association(SWCLASSES\.elc,@,EMACS_ELC)
+association(SWCLASSES\.elc,,EMACS_ELC)
 "ContentType"="application/x-elisp.compiled"
 
 undefine(EMACS_ELC_KEY)dnl
@@ -118,12 +118,12 @@ undefine(EMACS_ELC_KEY)dnl
 
 ; associations with PerceivedType==text => Classes\txtfile 
 ifdef(`EMACS_IS_DEFAULT_FOR_TEXTFILES',
-association(SWCLASSES\txtfile\shell\open\command,@,EMACS_OPEN_FILE,`REG_EXPAND(%SystemRoot%\system32\NOTEPAD.EXE %1)')
+association(SWCLASSES\txtfile\shell\open\command,,EMACS_OPEN_FILE,`REG_EXPAND(%SystemRoot%\system32\NOTEPAD.EXE %1)')
 
-association(SWCLASSES\txtfile\OpenWithProgIds,"EMACS_PROGID")
+association(SWCLASSES\txtfile\OpenWithProgIds,EMACS_PROGID)
 
 ; Classes\textfile . What is this key "textfile" ?
-association(SWCLASSES\textfile\OpenWithProgIds,"EMACS_PROGID")
+association(SWCLASSES\textfile\OpenWithProgIds,EMACS_PROGID)
 
 ; all files and directories
 def_assoc_key(STAR_KEY,SWCLASSES\*\shell\EMACS_PROGID)
@@ -141,11 +141,11 @@ def_assoc_key(DIR_KEY,SWCLASSES\Directory\shell\EMACS_PROGID)
 @="EMACS_OPEN_FILE")
 undefine(DIR_KEY)dnl
 
-association(SWCLASSES\cmdfile\OpenWithProgIds,"EMACS_PROGID")
-association(SWCLASSES\cmdfile\shell\edit\command,@,"EMACS_PROGID",`REG_EXPAND(%SystemRoot%\System32\NOTEPAD.EXE %1)')
+association(SWCLASSES\cmdfile\OpenWithProgIds,EMACS_PROGID)
+association(SWCLASSES\cmdfile\shell\edit\command,,EMACS_PROGID,`REG_EXPAND(%SystemRoot%\System32\NOTEPAD.EXE %1)')
 
 ; associations with other suffixes
 foreachq(SUFFIX,`EMACS_ASSOCIATED_SUFFIXES',
-`association(SWCLASSES\.SUFFIX\OpenWithProgIds,"EMACS_PROGID")')
+`association(SWCLASSES\.SUFFIX\OpenWithProgIds,EMACS_PROGID)')
 
 ifdef(`UNINSTALL_ASSOCIATION',divert(`0'))dnl

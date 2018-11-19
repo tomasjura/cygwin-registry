@@ -42,9 +42,9 @@ undefine(PYTHON_PY)dnl
 "PerceivedType"="text"
 "EditFlags"=DWORD_BITMASK(FTA_HasExtension|FTA_NoRemove|FTA_NoEditMIME|FTA_AlwaysUnsafe)
 
-association(SWCLASSES\.py\OpenWithProgIds,"PYTHON_PROG_ID_PY")
-association(SWCLASSES\.py\OpenWithProgIds,"PYTHON_PROG_ID_PYW")
-association(SWCLASSES\.pyw\OpenWithProgIds,"PYTHON_PROG_ID_PY")
-association(SWCLASSES\.pyw\OpenWithProgIds,"PYTHON_PROG_ID_PYW")
+association(SWCLASSES\.py\OpenWithProgIds,PYTHON_PROG_ID_PY)
+association(SWCLASSES\.py\OpenWithProgIds,PYTHON_PROG_ID_PYW)
+association(SWCLASSES\.pyw\OpenWithProgIds,PYTHON_PROG_ID_PY)
+association(SWCLASSES\.pyw\OpenWithProgIds,PYTHON_PROG_ID_PYW)
 
 ifdef(`UNINSTALL_ASSOCIATION',`divert(`0')')dnl

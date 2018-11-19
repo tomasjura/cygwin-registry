@@ -32,7 +32,7 @@ undefine(`JAVA_KEY')
 "PerceivedType"="text"
 "EditFlags"=DWORD_BITMASK(FTA_HasExtension|FTA_NoRemove|FTA_NoEditMIME|FTA_AlwaysUnsafe)
 
-association(SWCLASSES\.java\OpenWithProgIds,"JAVA_PROG_ID")
+association(SWCLASSES\.java\OpenWithProgIds,JAVA_PROG_ID)
 
 ; Class
 def_key(`CLASS',`SWCLASSES\CLASS_PROG_ID')dnl
@@ -44,7 +44,7 @@ undefine(`CLASS')
 "ContentType"="application/java-byte-code"
 "EditFlags"=DWORD_BITMASK(FTA_HasExtension|FTA_NoRemove|FTA_NoEditMIME|FTA_AlwaysUnsafe)
 
-association(SWCLASSES\.java\OpenWithProgIds,"CLASS_PROG_ID")
+association(SWCLASSES\.java\OpenWithProgIds,CLASS_PROG_ID)
 
 ; JAR 
 def_key(`JAR',`SWCLASSES\JAR_PROG_ID')dnl
@@ -56,7 +56,7 @@ undefine(`JAR')
 "ContentType"="application/java"
 "EditFlags"=DWORD_BITMASK(FTA_HasExtension|FTA_NoRemove|FTA_NoEditMIME|FTA_AlwaysUnsafe)
 
-association(SWCLASSES\.jar\OpenWithProgIds,"JAR_PROG_ID")
+association(SWCLASSES\.jar\OpenWithProgIds,JAR_PROG_ID)
 
 def_key(`PROPERTIES_KEY',`SWCLASSES\PROPERTIES_PROG_ID')dnl
 text_file_key(`PROPERTIES_KEY',Java Properties,`ICON_PROPERTIES',`SCRIPT_EDITOR')
@@ -67,6 +67,6 @@ undefine(`PROPERTIES_KEY')
 "ContentType"="text/x-java-properties"
 "EditFlags"=DWORD_BITMASK(FTA_HasExtension|FTA_NoRemove|FTA_NoEditMIME)
 
-association(SWCLASSES\.properties\OpenWithProgIds,"PROPERTIES_PROG_ID")
+association(SWCLASSES\.properties\OpenWithProgIds,PROPERTIES_PROG_ID)
 
 ifdef(`UNINSTALL_ASSOCIATION',`divert(`0')')dnl

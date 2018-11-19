@@ -17,7 +17,7 @@ ifdef(UNINSTALL_ASSOCIATION,divert(`-1'))
 "PerceivedType"="document"
 "EditFlags"=DWORD_BITMASK(FTA_HasExtension|FTA_NoRemove|FTA_NoEditMIME|FTA_AlwaysUnsafe)
 
-association(SWCLASSES\.dia\OpenWithProgIds,@,"DIA_PROG_ID")
+association(SWCLASSES\.dia\OpenWithProgIds,,"DIA_PROG_ID")
 
 def_key(`DIA_SW',`SWCLASSES\DIA_PROG_ID')dnl
 @="Dia Diagram"

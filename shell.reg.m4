@@ -29,7 +29,7 @@ undefine(`SH')dnl
 "PerceivedType"="text"
 "EditFlags"=DWORD_BITMASK(FTA_HasExtension|FTA_NoRemove|FTA_NoEditMIME|FTA_AlwaysUnsafe)
 
-association(SWCLASSES\.sh\OpenWithProgIds,"SH_PROG_ID")
+association(SWCLASSES\.sh\OpenWithProgIds,SH_PROG_ID)
 
 def_key(`BASH',`SWCLASSES\BASH_PROG_ID')dnl
 script_key(`BASH',Shell,`ICON_BASH',`\"CYGWIN_PATH\\bin\\bash.exe\"',`SCRIPT_EDITOR',`\"CYGWIN_PATH\\bin\\bash.exe\"',Shell,`ICON_BASH')
@@ -41,7 +41,7 @@ undefine(`BASH')dnl
 "PerceivedType"="text"
 "EditFlags"=DWORD_BITMASK(FTA_HasExtension|FTA_NoRemove|FTA_NoEditMIME|FTA_AlwaysUnsafe)
 
-association(SWCLASSES\.bash\OpenWithProgIds,"SH_PROG_ID")
+association(SWCLASSES\.bash\OpenWithProgIds,SH_PROG_ID)
 
 def_key(`ZSH',`SWCLASSES\ZSH_PROG_ID')dnl
 script_key(`ZSH',Shell,`ICON_ZSH',`\"CYGWIN_PATH\\bin\\zsh.exe\"',`SCRIPT_EDITOR',`\"CYGWIN_PATH\\bin\\zsh.exe\"',Shell,`ICON_ZSH')
@@ -53,6 +53,6 @@ undefine(`ZSH')dnl
 "PerceivedType"="text"
 "EditFlags"=DWORD_BITMASK(FTA_HasExtension|FTA_NoRemove|FTA_NoEditMIME|FTA_AlwaysUnsafe)
 
-association(SWCLASSES\.zsh\OpenWithProgIds,"ZSH_PROG_ID")
+association(SWCLASSES\.zsh\OpenWithProgIds,ZSH_PROG_ID)
 
 ifdef(`UNINSTALL_ASSOCIATION',`divert(`0')')

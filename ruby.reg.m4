@@ -43,10 +43,10 @@ undefine(`RUBY_RBW')dnl
 "PerceivedType"="text"
 "EditFlags"=DWORD_BITMASK(FTA_HasExtension|FTA_NoRemove|FTA_NoEditMIME|FTA_AlwaysUnsafe)
 
-association(SWCLASSES\.rb\OpenWithProgIds,"RUBY_PROG_ID_RB")
-association(SWCLASSES\.rb\OpenWithProgIds,"RUBY_PROG_ID_RBW")
-association(SWCLASSES\.rbw\OpenWithProgIds,"RUBY_PROG_ID_RB")
-association(SWCLASSES\.rbw\OpenWithProgIds,"RUBY_PROG_ID_RBW")
+association(SWCLASSES\.rb\OpenWithProgIds,RUBY_PROG_ID_RB)
+association(SWCLASSES\.rb\OpenWithProgIds,RUBY_PROG_ID_RBW)
+association(SWCLASSES\.rbw\OpenWithProgIds,RUBY_PROG_ID_RB)
+association(SWCLASSES\.rbw\OpenWithProgIds,RUBY_PROG_ID_RBW)
 
 
 def_key(`RUBY_RHTML',`SWCLASSES\RUBY_PROG_ID_RHTML')dnl
@@ -59,6 +59,6 @@ undefine(`RUBY_RHTML')
 "PerceivedType"="text"
 "EditFlags"=DWORD_BITMASK(FTA_HasExtension|FTA_NoRemove|FTA_NoEditMIME|FTA_AlwaysUnsafe)
 
-association(SWCLASSES\.rhtml\OpenWithProgIds,"RUBY_PROG_ID_RHTML")
+association(SWCLASSES\.rhtml\OpenWithProgIds,RUBY_PROG_ID_RHTML)
 
 ifdef(`UNINSTALL_ASSOCIATION',`divert(`0')')dnl

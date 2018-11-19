@@ -38,7 +38,7 @@ undefine(`HPP_KEY')
 "PerceivedType"="text"
 "EditFlags"=DWORD_BITMASK(FTA_HasExtension|FTA_NoRemove|FTA_NoEditMIME)
 
-association(SWCLASSES\.c\OpenWithProgIds,"C_PROG_ID")
+association(SWCLASSES\.c\OpenWithProgIds,C_PROG_ID)
 
 [SWCLASSES\.h]
 @="H_PROG_ID"
@@ -46,7 +46,7 @@ association(SWCLASSES\.c\OpenWithProgIds,"C_PROG_ID")
 "PerceivedType"="text"
 "EditFlags"=DWORD_BITMASK(FTA_HasExtension|FTA_NoRemove|FTA_NoEditMIME)
 
-association(SWCLASSES\.h\OpenWithProgIds,"H_PROG_ID")
+association(SWCLASSES\.h\OpenWithProgIds,H_PROG_ID)
 
 [SWCLASSES\.cpp]
 @="CPP_PROG_ID"
@@ -54,7 +54,7 @@ association(SWCLASSES\.h\OpenWithProgIds,"H_PROG_ID")
 "PerceivedType"="text"
 "EditFlags"=DWORD_BITMASK(FTA_HasExtension|FTA_NoRemove|FTA_NoEditMIME)
 
-association(SWCLASSES\.cpp\OpenWithProgIds,"CPP_PROG_ID")
+association(SWCLASSES\.cpp\OpenWithProgIds,CPP_PROG_ID)
 
 [SWCLASSES\.hpp]
 @="HPP_PROG_ID"
@@ -62,6 +62,6 @@ association(SWCLASSES\.cpp\OpenWithProgIds,"CPP_PROG_ID")
 "PerceivedType"="text"
 "EditFlags"=DWORD_BITMASK(FTA_HasExtension|FTA_NoRemove|FTA_NoEditMIME)
 
-association(SWCLASSES\.h\OpenWithProgIds,"HPP_PROG_ID")
+association(SWCLASSES\.h\OpenWithProgIds,HPP_PROG_ID)
 
 ifdef(`UNINSTALL_ASSOCIATION',`divert(`0')')dnl

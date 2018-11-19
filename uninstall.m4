@@ -26,13 +26,18 @@ define(`def_assoc_key',`define(quote($1),quote($2))ifdef(`UNINSTALL_ASSOCIATION'
 #association(key,value,data,data_uninstall)
 # creates association value
 # under key define value with data, during deinstalation use data uninstall
-# default data install is empty string
+# empty key set-up a default value (named as `@' inside .reg script)
+# default data install is an empty string
 # default data uninstall is - (aka delete value)
 # dedicated for association with .suffixes
+# examples:
+# associate .el with EMACS_EL as default : association(SWCLASSES\.el,,EMACS_KEY) ; defult key for .el
+# associate .el with EMACS_EL as default : association(SWCLASSES\.txt\OpenWithProgIds,EMACS_KEY) ; opener for .txt
+
 define(`association',`[$1]
-`$2'="quote($3)"
+ifelse($2,,@,"$2")="quote($3)"
 ifdef(`UNINSTALL_ASSOCIATION',`m4wrap(`[$1]
-$2=ifelse($#,4,"quote($4)",-)
+ifelse($2,,@,"$2")=ifelse($#,4,"quote($4)",-)
 
 ')')')
 

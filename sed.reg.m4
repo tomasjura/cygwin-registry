@@ -19,6 +19,6 @@ undefine(`SED')
 "PerceivedType"="text"
 "EditFlags"=DWORD_BITMASK(FTA_HasExtension|FTA_NoRemove|FTA_NoEditMIME|FTA_AlwaysUnsafe)
 
-association(SWCLASSES\.sed\OpenWithProgIds,"SED_PROG_ID")
+association(SWCLASSES\.sed\OpenWithProgIds,SED_PROG_ID)
 
 ifdef(`UNINSTALL_ASSOCIATION',`divert(`0')')dnl

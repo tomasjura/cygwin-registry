@@ -59,7 +59,7 @@ undefine(`JAR')
 association(SWCLASSES\.jar\OpenWithProgIds,"JAR_PROG_ID")
 
 def_key(`PROPERTIES_KEY',`SWCLASSES\PROPERTIES_PROG_ID')dnl
-text_file_key(`PROPERTIES_KEY',Java code,`ICON_',`SCRIPT_EDITOR')
+text_file_key(`PROPERTIES_KEY',Java Properties,`ICON_PROPERTIES',`SCRIPT_EDITOR')
 undefine(`PROPERTIES_KEY')
 
 [SWCLASSES\.properties]

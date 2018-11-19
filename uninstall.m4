@@ -30,7 +30,7 @@ define(`def_assoc_key',`define(quote($1),quote($2))ifdef(`UNINSTALL_ASSOCIATION'
 # default data uninstall is - (aka delete value)
 # dedicated for association with .suffixes
 define(`association',`[$1]
-`$2'="quote($3)"dnl
+`$2'="quote($3)"
 ifdef(`UNINSTALL_ASSOCIATION',`m4wrap(`[$1]
 $2=ifelse($#,4,"quote($4)",-)
 

@@ -84,7 +84,7 @@ def_key(`EMACS_EL_KEY',`SWCLASSES\EMACS_EL')
 dnl TODO add compile command, need a wrapper
 undefine(EMACS_EL_KEY)dnl
 
-association(SWCLASSES\.el,@,"EMACS_EL")
+association(SWCLASSES\.el,@,EMACS_EL)
 "ContentType"="text/x-script.elisp"
 ; really we want PerceivedType=text ? This associates the elisp scripts with notepad, wordpad and other ugly programs
 ;"PerceivedType"="text"
@@ -107,7 +107,7 @@ def_key(EMACS_ELC_KEY,SWCLASSES\EMACS_ELC)
 [EMACS_ELC_KEY\DefaultIcon]
 @="EMACS_ELC_ICON"
 
-association(SWCLASSES\.elc,@,"EMACS_ELC")
+association(SWCLASSES\.elc,@,EMACS_ELC)
 "ContentType"="application/x-elisp.compiled"
 
 undefine(EMACS_ELC_KEY)dnl
@@ -118,7 +118,7 @@ undefine(EMACS_ELC_KEY)dnl
 
 ; associations with PerceivedType==text => Classes\txtfile 
 ifdef(`EMACS_IS_DEFAULT_FOR_TEXTFILES',
-association(SWCLASSES\txtfile\shell\open\command,@,"EMACS_OPEN_FILE",`REG_EXPAND(%SystemRoot%\system32\NOTEPAD.EXE %1)')
+association(SWCLASSES\txtfile\shell\open\command,@,EMACS_OPEN_FILE,`REG_EXPAND(%SystemRoot%\system32\NOTEPAD.EXE %1)')
 
 association(SWCLASSES\txtfile\OpenWithProgIds,"EMACS_PROGID")
 

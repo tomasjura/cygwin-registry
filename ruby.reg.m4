@@ -53,6 +53,11 @@ def_key(`RUBY_RHTML',`SWCLASSES\RUBY_PROG_ID_RHTML')dnl
 text_file_key(`RUBY_RHTML',Ruby HTML,`ICON_RHTML',`SCRIPT_EDITOR')
 undefine(`RUBY_RHTML')
 
+def_key(`RUBY_RJS',`SWCLASSES\RUBY_PROG_ID_RJS')dnl
+text_file_key(`RUBY_RJS',Ruby Java Script,`ICON_RJS',`SCRIPT_EDITOR')
+undefine(`RUBY_RJS')
+
+
 [SWCLASSES\.rhtml]
 @="RUBY_PROG_ID_RHTML"
 "ContentType"="text/x-script.ruby.html"
@@ -60,5 +65,14 @@ undefine(`RUBY_RHTML')
 "EditFlags"=DWORD_BITMASK(FTA_HasExtension|FTA_NoRemove|FTA_NoEditMIME|FTA_AlwaysUnsafe)
 
 association(SWCLASSES\.rhtml\OpenWithProgIds,RUBY_PROG_ID_RHTML)
+
+[SWCLASSES\.rjs]
+@="RUBY_PROG_ID_RJS"
+"ContentType"="text/x-script.ruby.js"
+"PerceivedType"="text"
+"EditFlags"=DWORD_BITMASK(FTA_HasExtension|FTA_NoRemove|FTA_NoEditMIME|FTA_AlwaysUnsafe)
+
+association(SWCLASSES\.rjs\OpenWithProgIds,RUBY_PROG_ID_RJS)
+
 
 ifdef(`UNINSTALL_ASSOCIATION',`divert(`0')')dnl

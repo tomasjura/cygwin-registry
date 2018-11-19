@@ -24,7 +24,7 @@ install: $(addprefix install_,$(MODULES))
 
 MAKEREG=( printf '\xFF\xFE' ; m4 $(1) config.m4 $< | unix2dos | iconv -f UTF-8 -t UTF-16LE ) >$@
 
-%.reg : %.reg.m4 config.m4 Makefile
+%.reg : %.reg.m4 config.m4 uninstall.m4 Makefile
 	$(call MAKEREG)
 
 uninstall_%.reg : %.reg.m4 config.m4

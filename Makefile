@@ -44,8 +44,6 @@ install_emacs : emacs.reg
 	reg import $<
 	make -C icons install
 	$(REFRESH)
-#	$(call MAKE_RUNNER,emacs-w32.exe emacsclient-w32.exe)
-	install emacsd.sh /bin
 
 uninstall_% : uninstall_%.reg
 	reg import $<

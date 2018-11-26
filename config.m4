@@ -27,7 +27,7 @@ define(`CYGWIN_PATH',`C:\\cygwin64')
 # common icon dir
 define(`ICON_DIR',CYGWIN_PATH`\\usr\\local\\share\\icons') # icon dir for ruby, perl, GNU R, elisp... (Windows path style is required)
 
-# uncomment this to generate a script which uninstalls associations, but preserves keys
+# uncomment this to generate a script which uninstalls associations, but preserves keys like cygwin64.ruby.rb
 # define(UNINSTALL_ASSOCIATION)
 # When UNINSTALL then UNINSTALL_ASSOCIATION is mandatory
 ifdef(`UNINSTALL',`define(`UNINSTALL_ASSOCIATION')')
@@ -49,11 +49,11 @@ define(EMACS_VERSION,) # keep EMACS_VERSION empty unless you are going to use se
 define(EMACS_BIN_DIR,CYGWIN_PATH\\bin)
 define(`EMACS_ICON',EMACS_BIN_DIR`\\emacsclient-w32.exe,0')
 
-define(EMACS_OPEN_FILE,\"EMACS_BIN_DIR\\runemacsclient-w32.exe\" -p CYGWIN_PATH\\bin --alternate-editor= -n -c %1) # dir with doubled backslashes
+define(EMACS_OPEN_FILE,\"EMACS_BIN_DIR\\emacsclient-w32.exe\" --no-wait --create-frame %1) # dir with doubled backslashes
 
 # see emacsclient manual for usage of ALTERNATE_EDITOR, we will use the --alternate-editor= switch by default
-# ALTERNATE_EDITOR must not contain any parameters
-# define(ALTERNATE_EDITOR,EMACS_BIN_DIR\\runemacs.exe)
+# ALTERNATE_EDITOR must not contain any parameters for emacs < 25.1
+define(ALTERNATE_EDITOR,EMACS_BIN_DIR\\emacs-w32.exe --daemon)
 
 define(`EMACS_IS_DEFAULT_FOR_TEXTFILES') # comment out if you do not want emacs to be your default editor for text files
 
@@ -66,7 +66,7 @@ define(`SCRIPT_EDITOR',EMACS_OPEN_FILE)
 
 # defines an evironment variable EDITOR, comment out if you do not want to set it up
 # --no-wait as parameter emacsclientw-32 results no window at all
-define(`EDITOR',\"EMACS_BIN_DIR\\emacsclient-w32.exe\" --alternate-editor= --no-wait --create-frame)
+define(`EDITOR',\"EMACS_BIN_DIR\\emacsclient-w32.exe\" --create-frame)
 
 define(`GENERATED_FILE_HEADER',`; Generated file from [__file__]. Do not edit.
 ; Licence MIT

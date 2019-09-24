@@ -22,7 +22,7 @@ all : $(REGFILES) $(UNINSTALL_REGFILES)
 .PHONY : install
 install: $(addprefix install_,$(MODULES))
 
-MAKEREG=( printf '\xFF\xFE' ; m4 $(1) config.m4 $< | unix2dos | iconv -f UTF-8 -t UTF-16LE ) >$@
+MAKEREG={ set -o pipefail ; printf '\xFF\xFE' ;  m4 $(1) config.m4 $< | unix2dos | iconv -f UTF-8 -t UTF-16LE ; } >$@
 
 %.reg : %.reg.m4 config.m4 uninstall.m4 Makefile
 	$(call MAKEREG)

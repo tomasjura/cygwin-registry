@@ -158,17 +158,17 @@ cs.ico :
 	$(call C_ICO,C#)
 
 X_ICO=convert -size 256x256 canvas:none \
-	-font Helvetica-Bold -pointsize 180 -gravity North -annotate 0,0 '</>' -blur 0x6 \
+	-font Helvetica-Bold -pointsize 180 -gravity North -annotate +0+150 '</>' -blur 0x6 \
 	-font Helvetica-Bold -pointsize 180 -gravity North -strokewidth 8 \
-	-stroke navy -fill lightBlue -annotate 0,0 '</>' \
-	-fill black -stroke lightBlue -strokewidth 2 -gravity SouthEast -pointsize 120 -annotate 0,0 '$(1)' \
+	-stroke navy -fill lightBlue -annotate +0+150 '</>' \
+	-fill black -stroke lightBlue -strokewidth 2 -gravity SouthEast -pointsize 120 -annotate +0+10 '$(1)' \
 	-define icon:auto-resize="256,128,96,64,48,32,16" $@
 
-xml.ico :
+xml.ico : Makefile
 	$(call X_ICO,xml)
-xsl.ico :
+xsl.ico : Makefile
 	$(call X_ICO,xsl)
-xslt.ico :
+xslt.ico : Makefile
 	$(call X_ICO,xslt)
 
 install:

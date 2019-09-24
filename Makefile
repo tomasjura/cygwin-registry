@@ -11,7 +11,7 @@ UNINSTALL_REGFILES=$(addprefix uninstall_,$(REGFILES))
 REFRESH=( test -x $(CSC) && make notify_apps.exe && ./notify_apps.exe || true )
 
 # cygwin commands which we want to run with the hidden console
-# those are binded to suffixes: ruby:.rbw perl:.plw python:.pyw wish:.tk
+# those are bound to suffixes: ruby:.rbw perl:.plw python:.pyw wish:.tk
 WINPROGS=ruby.exe perl.exe python.exe wish.exe emacs-w32.exe emacsclient-w32.exe
 MAKE_RUNNER=( for f in $(1) ; do if test -x /bin/$$f -a ! -f /bin/run$$f -a -x /bin/run ; then  cp /bin/run /bin/run$$f ; fi ; done )
 

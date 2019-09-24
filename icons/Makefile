@@ -22,7 +22,7 @@ clean:
 
 MAKEICO=convert $< $(2) +repage \
 	-colors 256 -resize 256 \
-	-family Helvetica -pointsize 100 -gravity SouthEast -annotate 0,0 '$(1)' \
+	-family Helvetica -pointsize 100 -gravity SouthEast -annotate +0+30 '$(1)' \
 	-define icon:auto-resize="256,128,96,64,48,32,16" $(3) $@
 
 ruby.ico : ruby.svg

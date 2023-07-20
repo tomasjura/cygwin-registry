@@ -58,6 +58,20 @@ undefine(`JAR')
 
 association(SWCLASSES\.jar\OpenWithProgIds,JAR_PROG_ID)
 
+; WAR
+
+def_key(`WAR',`SWCLASSES\WAR_PROG_ID')dnl
+text_file_key(`WAR',WAR archive,`ICON_WAR')
+undefine(`WAR')
+
+[SWCLASSES\.war]
+@="WAR_PROG_ID"
+"ContentType"="application/web-java"
+"EditFlags"=DWORD_BITMASK(FTA_HasExtension|FTA_NoRemove|FTA_NoEditMIME|FTA_AlwaysUnsafe)
+
+association(SWCLASSES\.war\OpenWithProgIds,WAR_PROG_ID)
+
+; PROPERTIES
 def_key(`PROPERTIES_KEY',`SWCLASSES\PROPERTIES_PROG_ID')dnl
 text_file_key(`PROPERTIES_KEY',Java Properties,`ICON_PROPERTIES',`SCRIPT_EDITOR')
 undefine(`PROPERTIES_KEY')

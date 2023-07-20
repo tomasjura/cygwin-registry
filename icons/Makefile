@@ -13,7 +13,7 @@ ALL_ICONS = $(SHELL_ICONS) $(RUBY_ICONS) $(PYTHON_ICONS) $(PERL_ICONS) $(TOOL_IC
 	$(EMACS_ICONS) \
 	$(JAVA_ICONS) $(SCALA_ICONS) $(XML_ICONS) log.ico R.ico markdown.ico $(CS_ICONS)
 
-INSTALL_DIR=$(shell echo ICON_DIR| m4 ../config.m4 - )
+INSTALL_DIR:=$(shell echo ICON_DIR| m4 ../config.m4 - )
 
 all: $(ALL_ICONS)
 
@@ -171,6 +171,7 @@ xsl.ico : Makefile
 xslt.ico : Makefile
 	$(call X_ICO,xslt)
 
-install:
+$(INSTALL_DIR) :
 	mkdir -p $(INSTALL_DIR)
-	install -t $(INSTALL_DIR) $(ALL_ICONS) php.ico
+install: | $(INSTALL_DIR)
+	install -t $| $(ALL_ICONS) php.ico

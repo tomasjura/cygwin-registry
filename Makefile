@@ -15,17 +15,23 @@ REFRESH=( test -x $(CSC) && make notify_apps.exe && ./notify_apps.exe || true )
 WINPROGS=ruby.exe perl.exe python.exe wish.exe emacs-w32.exe emacsclient-w32.exe
 MAKE_RUNNER=( for f in $(1) ; do if test -x /bin/$$f -a ! -f /bin/run$$f -a -x /bin/run ; then  cp /bin/run /bin/run$$f ; fi ; done )
 
-.PHONY : all
+.PHONY : all install clean check
 all : $(REGFILES) $(UNINSTALL_REGFILES)
 	make -C icons all
 
-.PHONY : install
-install: $(addprefix install_,$(MODULES))
 
 MAKEREG={ set -o pipefail ; printf '\xFF\xFE' ;  m4 $(1) config.m4 $< | unix2dos | iconv -f UTF-8 -t UTF-16LE ; } >$@
+CHECK=! m4 config.m4 $< | grep --label=$< -H -E -f watched --color=auto
 
+.DELETE_ON_ERROR:
 %.reg : %.reg.m4 config.m4 uninstall.m4 Makefile
+	$(CHECK)
 	$(call MAKEREG)
+
+check_% : %.reg.m4
+	$(CHECK)
+
+check : $(MODULES:%=check_%)
 
 uninstall_%.reg : %.reg.m4 config.m4
 	$(call MAKEREG,-DUNINSTALL)
@@ -35,6 +41,8 @@ install_% : %.reg
 	make -C icons install
 	$(REFRESH)
 	$(call MAKE_RUNNER,%.exe)
+
+install: $(MODULES:%=install_%)
 
 install_runners:
 	$(call MAKE_RUNNER,$(WINPROGS))
@@ -56,7 +64,6 @@ install_pathext:
 notify_apps.exe : notify_apps.cs
 	$(CSC) /nologo /t:exe /unsafe+ /platform:x64 $<
 
-.PHONY : clean
 clean:
 	$(RM) $(REGFILES) $(UNINSTALL_REGFILES) notify_apps.exe 
 	make -C icons clean
@@ -65,4 +72,3 @@ clean:
 %.reg  : flags.m4 reg_expand.m4 script.m4 uninstall.m4
 emacs.reg : foreachq.m4
 foreachq.m4 : quote.m4
-

@@ -49,7 +49,7 @@ define(EMACS_VERSION,) # keep EMACS_VERSION empty unless you are going to use se
 define(EMACS_BIN_DIR,CYGWIN_PATH\\bin)
 define(`EMACS_ICON',EMACS_BIN_DIR`\\emacsclient-w32.exe,0')
 
-define(EMACS_OPEN_FILE,\"EMACS_BIN_DIR\\emacsclient-w32.exe\" --no-wait --create-frame %1) # dir with doubled backslashes
+define(EMACS_OPEN_FILE,\"EMACS_BIN_DIR\\emacsclient-w32.exe\" --no-wait --alternate-editor= --create-frame %1) # dir with doubled backslashes
 
 # see emacsclient manual for usage of ALTERNATE_EDITOR, we will use the --alternate-editor= switch by default
 # ALTERNATE_EDITOR must not contain any parameters for emacs < 25.1
@@ -66,7 +66,7 @@ define(`SCRIPT_EDITOR',EMACS_OPEN_FILE)
 
 # defines an evironment variable EDITOR, comment out if you do not want to set it up
 # --no-wait as parameter emacsclientw-32 results no window at all
-define(`EDITOR',\"EMACS_BIN_DIR\\emacsclient-w32.exe\" --create-frame)
+define(`EDITOR',\"EMACS_BIN_DIR\\emacsclient-w32.exe\" --create-frame --alternate-editor=)
 
 define(`GENERATED_FILE_HEADER',`; Generated file from [__file__]. Do not edit.
 ; Licence MIT
